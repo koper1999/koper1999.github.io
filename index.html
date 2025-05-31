@@ -101,45 +101,14 @@
             to { opacity: 1; }
         }
         
-         nav {
-            transition: transform 0.3s ease;
-        }
-        
-        nav.hidden {
-            transform: translateY(-100%);
-        }
-        
-        /* Мобильное меню - иконки без текста */
-        @media (max-width: 768px) {
-            nav ul {
-                flex-direction: row;
-                flex-wrap: nowrap;
-                overflow-x: auto;
-                -webkit-overflow-scrolling: touch;
-                justify-content: flex-start;
-                padding-bottom: 5px;
-            }
-            
-            nav li {
-                margin: 0 0.5rem;
-                flex: 0 0 auto;
-            }
-            
-            nav a {
-                padding: 0.5rem;
-                font-size: 0;
-                white-space: nowrap;
-            }
-            
-            nav a i {
-                display: block;
-                margin: 0 auto;
-                font-size: 1.2rem;
-            }
-            
-            nav a span {
-                display: none;
-            }
+        nav {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
         
         nav ul {
@@ -665,7 +634,7 @@
         <section id="about" class="section">
             <h2><i class="fas fa-paw"></i> О нашей гильдии</h2>
             <p>FurryRunee - это не просто гильдия, а настоящее братство в мире Albion Online. Мы объединяем игроков, которые ценят не только мощь стали, но и теплоту мехового сообщества!</p>
-            <p>Основанная в 2023 году, наша гильдия быстро выросла в сплочённое сообщество, где каждый найдет себе место, независимо от стиля игры.</p>
+            <p>Основанная в 2025 году, наша гильдия быстро выросла в сплочённое сообщество, где каждый найдет себе место, независимо от стиля игры.</p>
             
             <div class="activity-meter">
                 <div class="activity-progress"></div>
@@ -677,24 +646,24 @@
             <h2><i class="fas fa-crown"></i> Наше руководство</h2>
             <div class="members-grid">
                 <div class="member-card">
-                    <h3>FurryLeader</h3>
+                    <h3>jyravl</h3>
                     <p class="member-role"><i class="fas fa-crown"></i> Глава гильдии</p>
-                    <p>Стратег и вдохновитель с 5-летним опытом в Albion</p>
+                    <p>Стратег и вдохновитель с многолетным опытом в Albion</p>
                 </div>
                 <div class="member-card">
-                    <h3>SilverPaw</h3>
+                    <h3>jyravl</h3>
                     <p class="member-role"><i class="fas fa-swords"></i> Офицер PvP</p>
                     <p>Проводит жаркие битвы и тренировки</p>
                 </div>
                 <div class="member-card">
-                    <h3>GoldenTail</h3>
+                    <h3>rimyrorif</h3>
                     <p class="member-role"><i class="fas fa-dungeon"></i> Офицер PvE</p>
-                    <p>Мастер групповых данжей и ивентов</p>
+                    <p>Мастер групповых данжей, Путей Авалона и ивентов</p>
                 </div>
                 <div class="member-card">
-                    <h3>IronWhiskers</h3>
+                    <h3>MrNegotive</h3>
                     <p class="member-role"><i class="fas fa-coins"></i> Офицер экономики</p>
-                    <p>Контролирует гильдейскую казну и торговлю</p>
+                    <p>Контролирует гильдейскую казну и выплаты</p>
                 </div>
             </div>
         </section>
@@ -859,40 +828,6 @@
     </footer>
 
     <script>
-	    // Добавляем обработчик скролла для скрытия/показа меню
-        document.addEventListener('DOMContentLoaded', function() {
-            const nav = document.querySelector('nav');
-            let lastScroll = 0;
-            const scrollThreshold = 100; // На сколько пикселей нужно проскроллить для скрытия
-            
-            window.addEventListener('scroll', function() {
-                const currentScroll = window.pageYOffset;
-                
-                if (currentScroll <= 0) {
-                    // В самом верху страницы - показываем меню
-                    nav.classList.remove('hidden');
-                    return;
-                }
-                
-                if (Math.abs(currentScroll - lastScroll) < 50) {
-                    // Игнорируем маленькие скроллы
-                    return;
-                }
-                
-                if (currentScroll > lastScroll && currentScroll > scrollThreshold) {
-                    // Скроллим вниз и проскроллили достаточно - скрываем меню
-                    nav.classList.add('hidden');
-                } else if (currentScroll < lastScroll) {
-                    // Скроллим вверх - показываем меню
-                    nav.classList.remove('hidden');
-                }
-                
-                lastScroll = currentScroll;
-            });
-
-            // Остальной JavaScript код остается без изменений
-        });
-		
         // Анимация появления секций при скролле
         document.addEventListener('DOMContentLoaded', function() {
             const sections = document.querySelectorAll('.section');
